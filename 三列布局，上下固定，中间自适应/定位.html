@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>三列布局，上下固定，中间自适应-定位</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        #top,#bottom{
+            height:100px;
+            background: #ff0000;
+            width:100%;
+            position:fixed;
+        }
+        #top{
+            top:0;
+        }
+        #bottom{
+            bottom:0;
+        }
+        #center{
+            position:absolute;
+            top:100px;
+            bottom:100px;
+            background: #cccccc;
+            left:0;
+            right:0;
+            overflow:scroll;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="top"></div>
+        <div id="center">
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+            <h1>HHHHHHHH</h1>
+        </div>
+        <div id="bottom"></div>
+    </div>
+</body>
+</html>
