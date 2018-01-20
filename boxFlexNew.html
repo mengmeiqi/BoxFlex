@@ -3,8 +3,40 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>弹性盒模型(新)</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        #main{
+            display:flex;
+            display:-webkit-flex;
+            display:-moz-flex;
+        }
+        #left,#center,#right{
+            flex-grow:1;
+            -webkit-flex-grow: 1;
+            -moz-felx-grow:1;
+            height:300px;
+            width:0;
+        }
+        #left{
+            background: #ff00ff;
+        }
+        #center{
+            background: #0000ff;
+        }
+        #right{
+            background: #00ff00;
+        }
+    </style>
 </head>
 <body>
+    <div id="main">
+        <div id="left"><h1>This is 'Left'.</h1></div>
+        <div id="center"><h1>This is 'center'.This is 'center'.</h1></div>
+        <div id="right"><h1>This is 'right'.</h1></div>
+    </div>
 
 </body>
 </html>

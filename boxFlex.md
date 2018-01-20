@@ -1,0 +1,91 @@
+#1.boxFlex:
+    弹性盒子模型、弹性盒模型、弹性盒、弹性盒子、伸缩盒、伸缩盒子
+
+#2.推荐网站：
+    www.zhangxinxu.com 弹性盒子模型
+
+#3.默认布局是列，布局是弹性的，随着浏览器的变化而变化，分配父元素的剩余空间。
+
+#4.就目前而言，仅Firefox/Chrom/Safari浏览器支持弹性盒子模型，使用时带有前缀。
+
+#弹性盒模型写法：
+#5. 旧方法:
+    给父元素加display:box;
+        #main{
+            display:-webkit-box;
+            display:-moz-box;
+            display:box;
+        } //给父元素加display
+    给子元素加box-flex:
+        #main div{
+            height:300px;
+            -webkit-box-flex:1;
+            -moz-box-flex:1;
+            box-flex:1;
+        }
+
+#6.新方法：
+    给父元素加display:flex;
+        #main{
+            display:flex;
+            display:-webkit-flex;
+            display:-moz-flex;
+        }
+    给子元素加flex-grow:1;
+        #main div{
+            flex-grow:1;
+            -webkit-flex-grow:1;
+            -moz-flex-grow:1;
+        }
+
+#7.新旧弹性盒模型差别：
+    (1)在使用弹性盒模型的时候父元素必须要加display:box 或 display:inline-box:
+        新版弹性盒模型：flex：display : flex
+        老版弹性盒模型：box : display : -webkit-box
+    (2)box-orient 定义盒模型的主轴方向
+        新版：flex：flex-direction: row / column
+        老版：box : -webkit-box-orient:
+    ??      horizontal 水平显示     vertical 垂直方向??
+    (3)box-direction 元素排列顺序
+        新版：flex : flex-direction: row-reverse / column-reverse;
+        老版：box : -webkit-box-direction:
+              normal 正序???reverse 反序
+    (4)box-pack 主轴方向富裕的空间管理
+        新版：flex : justify-content : flex-start / flex-end / center
+              / space-between / space-around;
+        老版：box : -webkit-box-pack
+              start 所有子元素在盒子左侧显示，富裕空间在右侧
+              end 所有子元素在盒子右侧显示，富裕空间在左
+              center 所有子元素居中
+              justify 富裕空间在子元素之间平均分布
+    (5)box-align 侧轴方向方向富裕的空间管理
+        新版：flex : align-items : flex-start / flex-end / center / baseline
+        老版：box : -webkit-box-align
+              star 所有子元素在据顶
+              end 所有子元素在据底
+              center 所有子元素居中
+    (6)Box-flex 定义盒子的弹性空间
+        新版：flex : flex-grow
+        老版：box : -webkit-box-flex
+    (7)box-ordinal-group 设置元素的具体位置
+        新版：flex : order
+        老版：box : -webkit-box-ordinal-group
+
+#8.注意：如果子元素里面有内容,宽度将不会成比例。
+    <div id="main">
+            <div id="left"><h1>This is 'Left'.</h1></div>
+            <div id="center"><h1>This is 'center'.This is 'center'.</h1></div>
+            <div id="right"><h1>This is 'right'.</h1></div>
+    </div>
+  解决方法：给子元素加宽度width:0;
+    #main div{
+        width:0;
+    }
+
+#9.实例：
+    (1)两列布局，左侧固定，右侧自适应
+        浮动 ；定位 ；设置margin ;table ;弹性盒模型 ；
+    (2)三列布局，左右固定，中间自适应
+        浮动 ；定位 ；弹性盒模型 ；
+    (3)三行布局，上下固定，中间自适应
+        定位 ；弹性盒模型 ；
